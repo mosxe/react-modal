@@ -27,7 +27,7 @@
   left: 50%;
   max-height: 90vh;
   max-width: 80%;
-  width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,19 +40,12 @@
 
 .modal-header {
   padding: 16px 32px;
-  // box-shadow: 0px -1px 0px 0px #22242929 inset;
-
 }
 
 .modal-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex: 1;
   overflow: auto;
   padding: 16px 32px;
-  // border-top: 1px solid rgba(0, 0, 0, 0.12);
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .modal-footer {
