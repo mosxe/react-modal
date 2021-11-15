@@ -7,12 +7,12 @@ const App = () => {
   return (
     <div style={{background: '#EFF1F5', padding: '30px'}}>
       <button onClick={() => setOpen(true)}>OPEN MODAL</button>
-      <Modal show={open} onHide={setOpen} width="400px">
+      <Modal show={open} onHide={setOpen} width="400px" escapeKey={false} closeOutside={false}>
         <Modal.Header> 
           <div>ЗАГОЛОВОК</div>
         </Modal.Header>
         <Modal.Body>
-          <div>Create React App is a comfortable environment for learning React, 
+          <div>Create React111 App is a comfortable environment for learning React, 
             and is the best way to start building a new single-page application in React.
             It sets up your development environment so that you can use the latest JavaScript features, 
             provides a nice developer experience, and optimizes your app for production. You’ll need to have Node 
