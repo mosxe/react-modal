@@ -1,4 +1,4 @@
-﻿﻿import React, { useRef, useEffect, useCallback, useState } from 'react';
+﻿﻿import React, { useRef, useEffect, useState } from 'react';
 import ModalHeader from './ModalHeader';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
@@ -20,33 +20,28 @@ const Modal = ({show, children, onHide, closeOutside = true, width = null, escap
     }
   }, [show]);
 
-  const handleUserKeyPress = useCallback(e => {
-    console.log('handleUserKeyPress');
+  const handleUserKeyPress = (e) => {
     if (e.code === 'Escape' && escapeKey && onHide){
       onHide(false);
     }
-  }, []);
+  };
 
   const clickOutside = (e) => {
-    console.log('clickOutside');
     if (closeOutside && e.target === modalRef.current && onHide) {
       onHide(false);
     }
   };
 
   useEffect(() => {
-    console.log('START USE EFFECT');
-    // if (show) { //топорно, либо выносить в отдельную функцию
+    if (show) {
       window.addEventListener("keydown", handleUserKeyPress);
       window.addEventListener("mousedown", clickOutside);
-    // }
-
+    }
     return () => {
       window.removeEventListener("keydown", handleUserKeyPress);
       window.removeEventListener("mousedown", clickOutside);
-      console.log('END USE EFFECT')
     }
-  }, [clickOutside, handleUserKeyPress]);
+  }, [clickOutside, handleUserKeyPress, show]);
   
   const onAnimationEnd = () => {
     if (!show) {

@@ -2,12 +2,12 @@
 import Modal from './Modal';
 
 const App = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <div style={{background: '#EFF1F5', padding: '30px'}}>
       <button onClick={() => setOpen(true)}>OPEN MODAL</button>
-      <Modal show={open} onHide={setOpen} width="400px" escapeKey={false} closeOutside={false}>
+       <Modal show={open} onHide={setOpen} width="400px">
         <Modal.Header> 
           <div>ЗАГОЛОВОК</div>
         </Modal.Header>
